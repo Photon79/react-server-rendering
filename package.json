@@ -1,7 +1,6 @@
 {
-  "name": "react-server-tutorial",
-  "version": "0.0.0",
-  "description": "Code from the React tutorial, modified to add Server-Side Rendering, React Router, and Redux.",
+  "name": "react-server-rendering",
+  "version": "1.0.0",
   "main": "server.js",
   "dependencies": {
     "babel-loader": "^6.2.4",
@@ -11,12 +10,9 @@
     "babel-preset-react": "^6.5.0",
     "babel-preset-stage-0": "^6.5.0",
     "babel-register": "^6.7.2",
-    "body-parser": "^1.4.3",
     "copy-webpack-plugin": "^3.0.1",
     "express": "^4.4.5",
     "json-loader": "^0.5.4",
-    "marked": "^0.3.5",
-    "node-uuid": "^1.4.7",
     "object-assign": "^4.1.0",
     "prettyjson": "^1.1.3",
     "react": "^0.14.8",
@@ -27,18 +23,14 @@
     "react-router": "^2.0.1",
     "redux": "^3.3.1",
     "webpack": "^1.13.1",
-    "webpack-dev-middleware": "^1.6.1",
-    "webpack-hot-middleware": "^2.12.2",
-    "webpack-middleware": "^1.5.1",
     "winterfell": "^1.0.8"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node bootstrap.js"
+    "start": "webpack && node bootstrap.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/reactjs/react-tutorial.git"
+    "url": "https://github.com/Photon79/react-server-rendering.git"
   },
   "keywords": [
     "react",
@@ -51,10 +43,6 @@
     "comment",
     "example"
   ],
-  "bugs": {
-    "url": "https://github.com/firasd/react-server-tutorial/issues"
-  },
-  "homepage": "https://github.com/firasd/react-server-tutorial",
   "engines": {
     "node": "0.12.x"
   }

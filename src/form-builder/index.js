@@ -1,5 +1,5 @@
 import React, { createClass } from 'react';
-import ReactDom, { findDOMNode } from 'react-dom';
+import ReactDom, { findDOMNode, unmountComponentAtNode } from 'react-dom';
 import { withRouter } from 'react-router';
 import { connect } from 'react-redux';
 import Winterfell from 'winterfell';
@@ -17,6 +17,10 @@ let FormBuilder = createClass({
     //TODO: Get form config from server
   },
 
+  getQuestionAnswers() {
+    return {};
+  },
+
   onSubmit(payload) {
     if (this.props.sendCloseMessage) {
       this.props.sendCloseMessage('success', payload)
@@ -24,7 +28,7 @@ let FormBuilder = createClass({
     else {
       const formId = this.props.formId || this.props.params.formId;
       this.props.fillForm(payload);
-      findDOMNode(this.refs.formBuilder).reset();
+      this.forceUpdate();
       this.props.router.push(`/form/${formId}/complete`);
     }
   },
@@ -34,7 +38,8 @@ let FormBuilder = createClass({
       {...this.state}
       ref="formBuilder"
       onSubmit={this.onSubmit}
-      disableSubmit={true} />
+      disableSubmit={true}
+      questionAnswers={this.getQuestionAnswers()} />
   }
 });
 
